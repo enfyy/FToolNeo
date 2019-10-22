@@ -1,0 +1,60 @@
+﻿<Window x:Class="NextFTool.ProcessSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:local="clr-namespace:NextFTool"
+        mc:Ignorable="d"
+        Title="ProcessSelector" Height="350" Width="300"        
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="ProcessSelector_MouseDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="280"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Border CornerRadius="10" Grid.RowSpan="3">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#202020" Offset="0.0"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+        <Button Name="Close" Click="CloseButton_Click" Margin="0,0,10,0" Background="{x:Null}" BorderThickness="0" Grid.Row="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20">
+            <StackPanel>
+                <fa:ImageAwesome Icon="Times" Foreground="White" />
+            </StackPanel>
+        </Button>
+
+        <Button Name="Refresh" Click="RefreshButton_Click" Margin="0,0,278,0" Background="{x:Null}" BorderThickness="0" Grid.Row="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Center" Height="20">
+            <StackPanel>
+                <fa:ImageAwesome Icon="Refresh" Foreground="White" />
+            </StackPanel>
+        </Button>
+
+        <Label Grid.Row="0" Foreground="White" Content="Select the Neuz Process" Height="24" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Margin="82,0,81,0" Grid.RowSpan="2"/>
+
+        <ListBox Foreground="White" Name="ProcessList" Grid.Row="1" Background="Transparent">
+            
+        </ListBox>
+
+        <Button Click="Select_Process_Click" Grid.Row="2" Width="100" x:Name="Select_Process" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="33,10,0,10" >
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="10" Content="Select Process" Foreground="White"/>                
+            </StackPanel>
+        </Button>
+
+        <Button Click="Jump_to_Process_Click"  Grid.Row="2" Width="100"  x:Name="Jump_to_Process" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="166,10,0,10" >
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="10" Content="Jump To Process" Foreground="White"/>
+            </StackPanel>
+        </Button>
+
+
+    </Grid>
+</Window>

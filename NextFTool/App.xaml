@@ -1,0 +1,13 @@
+﻿<Application x:Class="NextFTool.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:NextFTool"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>        
+        
+        <ResourceDictionary>
+            <FontFamily x:Key="Nunito-Regular">pack://application:,,,/Fonts/#Nunito</FontFamily>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
