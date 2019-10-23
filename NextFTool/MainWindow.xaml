@@ -106,7 +106,7 @@
                     </Button>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
-                        <TextBox Width="60" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox x:Name="Delay_Input_0" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="0"/>
                     </StackPanel>
 
                 </StackPanel>

@@ -63,29 +63,44 @@ namespace NextFTool
 
         private void Select_Process_Click(object sender, RoutedEventArgs e)
         {
-            Process neuz = ProcessList.SelectedItem as Process;
-            Spammer spam = new Spammer(neuz);            
-            mainWindow.SetSpammer(buttonName, spam, neuz.MainWindowTitle);
-            Close();
-            mainWindow.closeProcessSelector();
+            if (ProcessList.SelectedItem != null)
+            {
+                Process neuz = ProcessList.SelectedItem as Process;
+                Spammer spam = new Spammer(neuz);
+                mainWindow.SetSpammer(buttonName, spam, neuz.MainWindowTitle);
+                Close();
+                mainWindow.closeProcessSelector();
+            } 
+            else
+            {
+                //Nothing happens
+            }
         }
 
         private void Jump_to_Process_Click(object sender, RoutedEventArgs e)
         {
-            Process neuz = ProcessList.SelectedItem as Process;
-            IntPtr handle = neuz.MainWindowHandle;
-
-            if (WinAPI.IsIconic(handle))
+            if (ProcessList.SelectedItem != null)
             {
-                WinAPI.ShowWindow(handle, 9);
-                WinAPI.SetForegroundWindow(handle);
+                Process neuz = ProcessList.SelectedItem as Process;
+                IntPtr handle = neuz.MainWindowHandle;
+
+                if (WinAPI.IsIconic(handle))
+                {
+                    WinAPI.ShowWindow(handle, 9);
+                    WinAPI.SetForegroundWindow(handle);
+                }
+                else
+                {
+                    WinAPI.ShowWindow(handle, 6); //minimize it first lmao. i hate this but it works :)
+                    WinAPI.ShowWindow(handle, 9);
+                    WinAPI.SetForegroundWindow(handle);
+                }
             }
             else
             {
-                WinAPI.ShowWindow(handle, 6); //minimize it first lmao. i hate this but it works :)
-                WinAPI.ShowWindow(handle, 9);
-                WinAPI.SetForegroundWindow(handle);
+                //Nothing happens.
             }
+            
         }
     }
 }

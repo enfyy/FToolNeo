@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="NoFKeyException.cs" />
     <Compile Include="WinAPI.cs" />
     <Page Include="HotkeyDialog.xaml">
       <SubType>Designer</SubType>
@@ -89,7 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Mapping.cs" />
     <Compile Include="HotkeyDialog.xaml.cs">
       <DependentUpon>HotkeyDialog.xaml</DependentUpon>
     </Compile>

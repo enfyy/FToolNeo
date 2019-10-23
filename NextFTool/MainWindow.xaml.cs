@@ -98,7 +98,67 @@ namespace NextFTool
         {
             Button button = sender as Button;
             string index = GetIndexFromName(button.Name);
-            spammers[index].startSpam();
+            
+            if (spammers.ContainsKey(index)) 
+            {
+                Spammer spammer = spammers[index];
+                spammer.f_key = GetFKeyFromInput(index);
+                spammer.SetFBar(GetSkillBarFromInput(index));
+                spammer.delay_ms = GetDelayFromInput(index);
+                spammer.startSpam();
+            } 
+            else
+            {
+                //Error Dialog: No process set
+            }
+        }
+
+        private int GetDelayFromInput(string index)
+        {
+            switch (index)
+            {
+                case "0": return Int32.Parse(Delay_Input_0.Text); //TODO: handle exceptions
+                //..
+                default: return 0;
+            }
+        }
+
+        private int GetFKeyFromInput(string index)
+        {
+            string selected;
+            switch (index)
+            {
+                case "-":
+                    throw new NoFKeyException("Please Select a F-Key");
+                case "0": 
+                    selected = F_Key_Select_1.SelectedItem.ToString();
+                    break;
+                //...
+                default: 
+                    selected = "";
+                    break;
+            }
+            selected.Replace("F", ""); //format string
+            return Mapping.FKeyCodeMapping(selected);
+        }
+
+        private int GetSkillBarFromInput(string index)
+        {
+            string selected;
+            switch (index)
+            {
+                case "-":
+                    selected = "0";
+                    break;
+                case "0": 
+                    selected = Skill_Bar_Select_1.SelectedItem.ToString();
+                    break;
+                //...
+                default:
+                    selected = null;
+                    break;
+            }
+            return Mapping.NumberKeyCodeMapping(selected);
         }
     }
 }
