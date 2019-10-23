@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -39,7 +40,7 @@ namespace NextFTool
 
         public bool readyToSpam()
         {
-            if(delay_ms != null && f_key != null)
+            if(delay_ms != 0 && f_key != 0)
             {
                 return true;
             } else
@@ -55,10 +56,11 @@ namespace NextFTool
 
         public void startSpam()
         {
-            if (readyToSpam())
+            if (true)
             {
                 isSpamming = true;
-                spamLoop();
+                Thread spammer = new Thread(spamLoop);
+                spammer.Start();
             }
             else
             {
@@ -77,6 +79,7 @@ namespace NextFTool
                 // maybe short delay ?
                 WinAPI.PostMessage(neuz.MainWindowHandle, WM_KEYDOWN, f_key, 0); // press f-key
                 //Thread.Sleep(delay_ms); //something like that, make sure ui dont sleep...
+                Thread.Sleep(200);
             }
         }
 

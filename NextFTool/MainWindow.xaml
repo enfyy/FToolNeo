@@ -113,7 +113,7 @@
                 <StackPanel Width="75">
                     <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_0" Height="75" Background="{x:Null}" BorderThickness="0">
                         <StackPanel Orientation="Horizontal">
-                            <fa:ImageAwesome Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <fa:ImageAwesome x:Name="Start_Icon_0" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>

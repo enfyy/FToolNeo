@@ -30,7 +30,7 @@ namespace NextFTool
         {
             switch (num)
             {
-                case "0": return 0;
+                case "-": return 0;
                 case "1": return 0x31;
                 case "2": return 0x32;
                 case "3": return 0x33;

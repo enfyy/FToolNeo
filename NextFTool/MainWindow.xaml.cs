@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FontAwesome.WPF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,8 @@ namespace NextFTool
     /// </summary>
     public partial class MainWindow : Window
     {
+        Color pause_color = (Color)ColorConverter.ConvertFromString("#FF1F48");
+        Color play_color  = (Color)ColorConverter.ConvertFromString("#FF00FFAE");
         const string pattern = @"\b\S*_";
         ProcessSelector neuzSelect = null;
         Dictionary<string, Spammer> spammers = new Dictionary<string, Spammer>();
@@ -102,15 +105,42 @@ namespace NextFTool
             if (spammers.ContainsKey(index)) 
             {
                 Spammer spammer = spammers[index];
-                spammer.f_key = GetFKeyFromInput(index);
-                spammer.SetFBar(GetSkillBarFromInput(index));
-                spammer.delay_ms = GetDelayFromInput(index);
-                spammer.startSpam();
+                if (spammer.isSpamming)
+                {
+                    DeactivateSpammer(spammer, index);
+                } else
+                {
+                    ActivateSpammer(spammer, index);
+                }
+                
             } 
             else
             {
-                //Error Dialog: No process set
+                MessageBox.Show("Please select a Process.");
             }
+        }
+
+        private void DeactivateSpammer(Spammer spammer, string index)
+        {
+            spammer.stopSpam();
+            ToggleStartIcon(index);
+        }
+
+        private void ActivateSpammer(Spammer spammer, string index)
+        {
+            try
+            {
+                spammer.f_key = GetFKeyFromInput(index);
+            }
+            catch
+            {
+                MessageBox.Show("Please select a F-Key.");
+                return;
+            }
+            spammer.SetFBar(GetSkillBarFromInput(index));
+            spammer.delay_ms = GetDelayFromInput(index);
+            spammer.startSpam();
+            ToggleStartIcon(index);
         }
 
         private int GetDelayFromInput(string index)
@@ -131,15 +161,15 @@ namespace NextFTool
                 case "-":
                     throw new NoFKeyException("Please Select a F-Key");
                 case "0": 
-                    selected = F_Key_Select_1.SelectedItem.ToString();
+                    selected = F_Key_Select_1.Text;
                     break;
                 //...
                 default: 
                     selected = "";
                     break;
             }
-            selected.Replace("F", ""); //format string
-            return Mapping.FKeyCodeMapping(selected);
+            selected = selected.Replace("F", ""); //format string
+            return Mapping.FKeyCodeMapping(selected);            
         }
 
         private int GetSkillBarFromInput(string index)
@@ -150,8 +180,8 @@ namespace NextFTool
                 case "-":
                     selected = "0";
                     break;
-                case "0": 
-                    selected = Skill_Bar_Select_1.SelectedItem.ToString();
+                case "0":
+                    selected = Skill_Bar_Select_1.Text;
                     break;
                 //...
                 default:
@@ -159,6 +189,32 @@ namespace NextFTool
                     break;
             }
             return Mapping.NumberKeyCodeMapping(selected);
+        }
+
+        private ImageAwesome GetStartImageFromIndex(string index)
+        {           
+            switch (index)
+            {
+                case "0":
+                    return Start_Icon_0;
+                default:
+                    throw new Exception("There is no Start/Stop Icon with that index.");
+            }           
+        }
+
+        private void ToggleStartIcon(string index)
+        {
+            ImageAwesome image = GetStartImageFromIndex(index);
+            if (image.Icon == FontAwesomeIcon.Play)
+            {
+                image.Icon = FontAwesomeIcon.Pause;
+                image.Foreground = new SolidColorBrush(pause_color);
+            } 
+            else
+            {
+                image.Icon = FontAwesomeIcon.Play;
+                image.Foreground = new SolidColorBrush(play_color);
+            }
         }
     }
 }
