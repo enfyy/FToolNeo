@@ -11,19 +11,22 @@ namespace NextFTool
 {
     public class Spammer
     {
+        public const int Min_delay = 50;
         public int delay_ms { get; set; }
         public int f_key { get; set; }
         public int? f_bar; //not int
         public int hotkey; //also not int
         public bool isSpamming;
         public Process neuz;
+        MainWindow mainWindow;
 
         const UInt32 WM_KEYDOWN = 0x0100;
         const int VK_F1 = 0x70;
 
-        public Spammer(Process neuz)
+        public Spammer(Process neuz, MainWindow main)
         {
             this.neuz = neuz;
+            this.mainWindow = main;
         }
 
         public void SetFBar(int num)
@@ -38,13 +41,14 @@ namespace NextFTool
             }
         }
 
-        public bool readyToSpam()
+        public bool validDelay()
         {
-            if(delay_ms != 0 && f_key != 0)
+            if(delay_ms >= Min_delay)
             {
                 return true;
             } else
             {
+                throw new InvalidDelayException("Select F-Key and Delay...");
                 return false;
             }
         }
@@ -56,16 +60,13 @@ namespace NextFTool
 
         public void startSpam()
         {
-            if (true)
+            if (validDelay())
             {
                 isSpamming = true;
                 Thread spammer = new Thread(spamLoop);
+                mainWindow.AddActiveSpammer(spammer);
                 spammer.Start();
-            }
-            else
-            {
-                //Error Dialog: Make sure to select a F-Key and a Delay.
-            }
+            }        
         }
 
         public void spamLoop()
@@ -77,9 +78,8 @@ namespace NextFTool
                     WinAPI.PostMessage(neuz.MainWindowHandle, WM_KEYDOWN, f_bar.Value, 0); // go to skill-bar
                 }               
                 // maybe short delay ?
-                WinAPI.PostMessage(neuz.MainWindowHandle, WM_KEYDOWN, f_key, 0); // press f-key
-                //Thread.Sleep(delay_ms); //something like that, make sure ui dont sleep...
-                Thread.Sleep(200);
+                WinAPI.PostMessage(neuz.MainWindowHandle, WM_KEYDOWN, f_key, 0); // press f-key                
+                Thread.Sleep(delay_ms);
             }
         }
 

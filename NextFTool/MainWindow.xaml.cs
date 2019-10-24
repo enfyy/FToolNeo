@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,10 +28,19 @@ namespace NextFTool
         const string pattern = @"\b\S*_";
         ProcessSelector neuzSelect = null;
         Dictionary<string, Spammer> spammers = new Dictionary<string, Spammer>();
+        List<Thread> activeThreads = new List<Thread>();
 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public void StopThreads()
+        {
+            foreach (Thread t in activeThreads)
+            {
+                t.Abort();
+            }
         }
 
         private string GetIndexFromName(string name)
@@ -50,17 +60,18 @@ namespace NextFTool
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
+            StopThreads();
             Close();
+        }
+
+        public void AddActiveSpammer(Thread t)
+        {
+            activeThreads.Add(t);
         }
 
         private void MinimizeButton_Click(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
-        }
-
-        private void F_Key_Select_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void ProcessSelector_Button_Click(object sender, RoutedEventArgs e)
@@ -77,7 +88,7 @@ namespace NextFTool
             }            
         }
 
-        public void SetSpammer(string buttonName, Spammer spammer, string spammerName)
+        public void AttachSpammer(string buttonName, Spammer spammer, string spammerName)
         {
             string index = GetIndexFromName(buttonName);
             Label label = GetLabelFromIndex(index);
@@ -110,6 +121,17 @@ namespace NextFTool
                     DeactivateSpammer(spammer, index);
                 } else
                 {
+                    try
+                    {
+                        spammer.f_key = GetFKeyFromInput(index);
+                    }
+                    catch (NoFKeyException)
+                    {
+                        MessageBox.Show("Please select a F-Key.");
+                        return;
+                    }
+                    spammer.SetFBar(GetSkillBarFromInput(index));
+                    spammer.delay_ms = GetDelayFromInput(index);
                     ActivateSpammer(spammer, index);
                 }
                 
@@ -129,17 +151,14 @@ namespace NextFTool
         private void ActivateSpammer(Spammer spammer, string index)
         {
             try
-            {
-                spammer.f_key = GetFKeyFromInput(index);
+            {                
+                spammer.startSpam();                
             }
-            catch
+            catch (InvalidDelayException)
             {
-                MessageBox.Show("Please select a F-Key.");
+                MessageBox.Show("Make sure to set a Delay ≥ " + Spammer.Min_delay + " ms.");
                 return;
-            }
-            spammer.SetFBar(GetSkillBarFromInput(index));
-            spammer.delay_ms = GetDelayFromInput(index);
-            spammer.startSpam();
+            }                       
             ToggleStartIcon(index);
         }
 
@@ -161,7 +180,7 @@ namespace NextFTool
                 case "-":
                     throw new NoFKeyException("Please Select a F-Key");
                 case "0": 
-                    selected = F_Key_Select_1.Text;
+                    selected = F_Key_Select_0.Text;
                     break;
                 //...
                 default: 
@@ -181,7 +200,7 @@ namespace NextFTool
                     selected = "0";
                     break;
                 case "0":
-                    selected = Skill_Bar_Select_1.Text;
+                    selected = Skill_Bar_Select_0.Text;
                     break;
                 //...
                 default:

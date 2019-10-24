@@ -51,7 +51,7 @@
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
                         <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
-                        <ComboBox x:Name="F_Key_Select_1" Foreground="Black" Height="25" SelectionChanged="F_Key_Select_1_SelectionChanged" Width="40" >
+                        <ComboBox x:Name="F_Key_Select_0" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
                             <ComboBoxItem Content="F2" />
@@ -67,7 +67,7 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
-                        <ComboBox x:Name="Skill_Bar_Select_1" Height="25" Width="40">
+                        <ComboBox x:Name="Skill_Bar_Select_0" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
                             <ComboBoxItem Content="2" />
@@ -83,7 +83,7 @@
 
                     <StackPanel Orientation="Horizontal">
                         <Label Grid.Row="0" Foreground="White" Content="Priority" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
-                        <ComboBox x:Name="Priority_Select_1" Width="40"  Height="25">
+                        <ComboBox x:Name="Priority_Select_0" Width="40"  Height="25">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
                             <ComboBoxItem Content="2" />
@@ -106,7 +106,7 @@
                     </Button>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
-                        <TextBox x:Name="Delay_Input_0" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="0"/>
+                        <TextBox x:Name="Delay_Input_0" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
                     </StackPanel>
 
                 </StackPanel>

@@ -76,6 +76,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="InvalidDelayException.cs" />
     <Compile Include="NoFKeyException.cs" />
     <Compile Include="WinAPI.cs" />
     <Page Include="HotkeyDialog.xaml">

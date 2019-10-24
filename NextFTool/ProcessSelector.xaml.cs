@@ -66,8 +66,8 @@ namespace NextFTool
             if (ProcessList.SelectedItem != null)
             {
                 Process neuz = ProcessList.SelectedItem as Process;
-                Spammer spam = new Spammer(neuz);
-                mainWindow.SetSpammer(buttonName, spam, neuz.MainWindowTitle);
+                Spammer spam = new Spammer(neuz, mainWindow);
+                mainWindow.AttachSpammer(buttonName, spam, neuz.MainWindowTitle);
                 Close();
                 mainWindow.closeProcessSelector();
             } 
