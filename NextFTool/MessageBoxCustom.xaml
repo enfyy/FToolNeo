@@ -1,4 +1,4 @@
-﻿<Window x:Class="NextFTool.HotkeyDialog"
+﻿<Window x:Class="NextFTool.MessageBoxCustom"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,14 +6,13 @@
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         xmlns:local="clr-namespace:NextFTool"
         mc:Ignorable="d"
-        Height="150" Width="300"        
+        Height="100" Width="300"        
         AllowsTransparency="True" Background="Transparent"
         WindowStyle="None" ResizeMode="NoResize"
-        Title="HotkeyDialog"
-        MouseDown="HotkeyDialog_MouseDown">
+        Title="MessageBox"
+        MouseDown="MessageBoxCustom_MouseDown">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -32,13 +31,13 @@
             </StackPanel>
         </Button>
 
-        <Label FontFamily="{StaticResource Nunito-Regular}" Foreground="White" Grid.Row="0" Content="Press any Button or Two Button Combo" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Label x:Name="Label_Custom_Message" FontFamily="{StaticResource Nunito-Regular}" Foreground="White" Grid.Row="0" Content="Custom Message" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Grid.Row="2" Width="50"  x:Name="Confirm_Button" Click="Confirm_Button_Click" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left" Margin="125,10,0,10" >
             <StackPanel Orientation="Horizontal">
-                <Label FontSize="10" Content="Confirm" Foreground="White"/>
+                <Label FontSize="10" Content="OK" Foreground="White"/>
             </StackPanel>
         </Button>
 
-    </Grid>    
+    </Grid>
 </Window>

@@ -48,8 +48,7 @@ namespace NextFTool
                 return true;
             } else
             {
-                throw new InvalidDelayException("Select F-Key and Delay...");
-                return false;
+                throw new InvalidDelayException("Select F-Key and Delay...");               
             }
         }
 

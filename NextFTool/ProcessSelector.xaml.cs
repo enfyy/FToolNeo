@@ -22,13 +22,13 @@ namespace NextFTool
     public partial class ProcessSelector : Window
     {
         MainWindow mainWindow = null;
-        public string buttonName; //indicates which of the process selector buttons was clicked.
-        public ProcessSelector(MainWindow main, string name)
+        public string index; //indicates which of the process selector buttons was clicked.
+        public ProcessSelector(MainWindow main, string index)
         {
             InitializeComponent();
             PopulateProcessList();
             mainWindow = main;
-            buttonName = name;
+            this.index = index;
         }
 
         private void ProcessSelector_MouseDown(object sender, MouseButtonEventArgs e)
@@ -67,7 +67,7 @@ namespace NextFTool
             {
                 Process neuz = ProcessList.SelectedItem as Process;
                 Spammer spam = new Spammer(neuz, mainWindow);
-                mainWindow.AttachSpammer(buttonName, spam, neuz.MainWindowTitle);
+                mainWindow.AttachSpammer(index, spam, neuz.MainWindowTitle);
                 Close();
                 mainWindow.closeProcessSelector();
             } 

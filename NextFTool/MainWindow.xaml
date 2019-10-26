@@ -29,9 +29,9 @@
             </Border.Background>
         </Border>
 
-        <Image Source="/Resource/ftoolneo.png" RenderTransformOrigin="0.686,0.507" Margin="27,24,274,14"/>
+        <Image Source="/Resource/ftoolneo.png" RenderTransformOrigin="0.686,0.507" Margin="27,24,274,10"/>
 
-        <Button Name="Close" Click="CloseButton_Click" Margin="0,0,10,62" Background="{x:Null}" BorderThickness="0" Grid.Row="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Center" Height="28">
+        <Button Name="Btn_Close" Click="CloseButton_Click" Margin="0,0,10,62" Background="{x:Null}" BorderThickness="0" Grid.Row="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Center" Height="28">
             <StackPanel>
                 <fa:ImageAwesome Icon="Times" Foreground="White" />
             </StackPanel>
@@ -65,7 +65,7 @@
                         </ComboBox>
                     </StackPanel>
 
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
                         <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_0" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
@@ -79,21 +79,7 @@
                             <ComboBoxItem Content="8" />
                             <ComboBoxItem Content="9" />
                         </ComboBox>
-                    </StackPanel>
-
-                    <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="Priority" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
-                        <ComboBox x:Name="Priority_Select_0" Width="40"  Height="25">
-                            <ComboBoxItem Content="-" IsSelected="True"/>
-                            <ComboBoxItem Content="1" />
-                            <ComboBoxItem Content="2" />
-                            <ComboBoxItem Content="3" />
-                            <ComboBoxItem Content="4" />
-                            <ComboBoxItem Content="5" />
-                            <ComboBoxItem Content="6" />
-                        </ComboBox>
-                    </StackPanel>
-                    
+                    </StackPanel>                    
 
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -106,7 +92,7 @@
                     </Button>
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
-                        <TextBox x:Name="Delay_Input_0" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_0" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
                     </StackPanel>
 
                 </StackPanel>
@@ -118,7 +104,337 @@
                     </Button>
                 </StackPanel>
                 <StackPanel Width="35">
-                    <Button x:Name="Set_Hotkey_1" Click="Set_Hotkey_1_Click" Background="{x:Null}" BorderThickness="0">
+                    <Button x:Name="Set_Hotkey_0" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
+                        <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="F_Key_Select_1" Foreground="Black" Height="25" Width="40" >
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                            <ComboBoxItem Content="F3" />
+                            <ComboBoxItem Content="F4" />
+                            <ComboBoxItem Content="F5" />
+                            <ComboBoxItem Content="F6" />
+                            <ComboBoxItem Content="F7" />
+                            <ComboBoxItem Content="F8" />
+                            <ComboBoxItem Content="F9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="Skill_Bar_Select_1" Height="25" Width="40">
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="1" />
+                            <ComboBoxItem Content="2" />
+                            <ComboBoxItem Content="3" />
+                            <ComboBoxItem Content="4" />
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="6" />
+                            <ComboBoxItem Content="7" />
+                            <ComboBoxItem Content="8" />
+                            <ComboBoxItem Content="9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Name="Label_Attached_To_1" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
+                    <Button x:Name="ProcessSelector_Button_1" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <Label Content="Select Process" Foreground="White" Width="123"/>
+                            <fa:ImageAwesome Icon="ObjectGroup" Foreground="White" Height="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_1" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="75">
+                    <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_1" Height="75" Background="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome x:Name="Start_Icon_1" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Width="35">
+                    <Button x:Name="Set_Hotkey_1" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
+                        <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="F_Key_Select_2" Foreground="Black" Height="25" Width="40" >
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                            <ComboBoxItem Content="F3" />
+                            <ComboBoxItem Content="F4" />
+                            <ComboBoxItem Content="F5" />
+                            <ComboBoxItem Content="F6" />
+                            <ComboBoxItem Content="F7" />
+                            <ComboBoxItem Content="F8" />
+                            <ComboBoxItem Content="F9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="Skill_Bar_Select_2" Height="25" Width="40">
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="1" />
+                            <ComboBoxItem Content="2" />
+                            <ComboBoxItem Content="3" />
+                            <ComboBoxItem Content="4" />
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="6" />
+                            <ComboBoxItem Content="7" />
+                            <ComboBoxItem Content="8" />
+                            <ComboBoxItem Content="9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Name="Label_Attached_To_2" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
+                    <Button x:Name="ProcessSelector_Button_2" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <Label Content="Select Process" Foreground="White" Width="123"/>
+                            <fa:ImageAwesome Icon="ObjectGroup" Foreground="White" Height="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_2" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="75">
+                    <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_2" Height="75" Background="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome x:Name="Start_Icon_2" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Width="35">
+                    <Button x:Name="Set_Hotkey_2" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
+                        <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="F_Key_Select_3" Foreground="Black" Height="25" Width="40" >
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                            <ComboBoxItem Content="F3" />
+                            <ComboBoxItem Content="F4" />
+                            <ComboBoxItem Content="F5" />
+                            <ComboBoxItem Content="F6" />
+                            <ComboBoxItem Content="F7" />
+                            <ComboBoxItem Content="F8" />
+                            <ComboBoxItem Content="F9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="Skill_Bar_Select_3" Height="25" Width="40">
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="1" />
+                            <ComboBoxItem Content="2" />
+                            <ComboBoxItem Content="3" />
+                            <ComboBoxItem Content="4" />
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="6" />
+                            <ComboBoxItem Content="7" />
+                            <ComboBoxItem Content="8" />
+                            <ComboBoxItem Content="9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Name="Label_Attached_To_3" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
+                    <Button x:Name="ProcessSelector_Button_3" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <Label Content="Select Process" Foreground="White" Width="123"/>
+                            <fa:ImageAwesome Icon="ObjectGroup" Foreground="White" Height="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_3" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="75">
+                    <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_3" Height="75" Background="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome x:Name="Start_Icon_3" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Width="35">
+                    <Button x:Name="Set_Hotkey_3" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
+                        <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="5" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="F_Key_Select_4" Foreground="Black" Height="25" Width="40" >
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                            <ComboBoxItem Content="F3" />
+                            <ComboBoxItem Content="F4" />
+                            <ComboBoxItem Content="F5" />
+                            <ComboBoxItem Content="F6" />
+                            <ComboBoxItem Content="F7" />
+                            <ComboBoxItem Content="F8" />
+                            <ComboBoxItem Content="F9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="Skill_Bar_Select_4" Height="25" Width="40">
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="1" />
+                            <ComboBoxItem Content="2" />
+                            <ComboBoxItem Content="3" />
+                            <ComboBoxItem Content="4" />
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="6" />
+                            <ComboBoxItem Content="7" />
+                            <ComboBoxItem Content="8" />
+                            <ComboBoxItem Content="9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Name="Label_Attached_To_4" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
+                    <Button x:Name="ProcessSelector_Button_4" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <Label Content="Select Process" Foreground="White" Width="123"/>
+                            <fa:ImageAwesome Icon="ObjectGroup" Foreground="White" Height="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_4" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="75">
+                    <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_4" Height="75" Background="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome x:Name="Start_Icon_4" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Width="35">
+                    <Button x:Name="Set_Hotkey_4" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
+                        <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
+        </StackPanel>
+        <StackPanel Grid.Row="6" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="F_Key_Select_5" Foreground="Black" Height="25" Width="40" >
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="F1" />
+                            <ComboBoxItem Content="F2" />
+                            <ComboBoxItem Content="F3" />
+                            <ComboBoxItem Content="F4" />
+                            <ComboBoxItem Content="F5" />
+                            <ComboBoxItem Content="F6" />
+                            <ComboBoxItem Content="F7" />
+                            <ComboBoxItem Content="F8" />
+                            <ComboBoxItem Content="F9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
+                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <ComboBox x:Name="Skill_Bar_Select_5" Height="25" Width="40">
+                            <ComboBoxItem Content="-" IsSelected="True"/>
+                            <ComboBoxItem Content="1" />
+                            <ComboBoxItem Content="2" />
+                            <ComboBoxItem Content="3" />
+                            <ComboBoxItem Content="4" />
+                            <ComboBoxItem Content="5" />
+                            <ComboBoxItem Content="6" />
+                            <ComboBoxItem Content="7" />
+                            <ComboBoxItem Content="8" />
+                            <ComboBoxItem Content="9" />
+                        </ComboBox>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Label Name="Label_Attached_To_5" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
+                    <Button x:Name="ProcessSelector_Button_5" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Width="150">
+                            <Label Content="Select Process" Foreground="White" Width="123"/>
+                            <fa:ImageAwesome Icon="ObjectGroup" Foreground="White" Height="15" Width="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Delay in ms" Foreground="White" FontFamily="{StaticResource Nunito-Regular}" Width="94"/>
+                        <TextBox SelectionChanged="Delay_Input_SelectionChanged" x:Name="Delay_Input_5" Width="60" VerticalAlignment="Center" HorizontalAlignment="Center" Text="50"/>
+                    </StackPanel>
+
+                </StackPanel>
+                <StackPanel Width="75">
+                    <Button Click="Start_Stop_Button_Click" x:Name="Start_Stop_Button_5" Height="75" Background="{x:Null}" BorderThickness="0">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:ImageAwesome x:Name="Start_Icon_5" Icon="Play" Foreground="#FF00FFAE" Height="25"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel Width="35">
+                    <Button x:Name="Set_Hotkey_5" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
                 </StackPanel>

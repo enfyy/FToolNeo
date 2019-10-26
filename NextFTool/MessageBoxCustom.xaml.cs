@@ -15,32 +15,44 @@ using System.Windows.Shapes;
 namespace NextFTool
 {
     /// <summary>
-    /// Interaction logic for HotkeyDialog.xaml
+    /// Interaction logic for MessageBoxCustom.xaml
     /// </summary>
-    public partial class HotkeyDialog : Window
+    public partial class MessageBoxCustom : Window
     {
-        MainWindow mainWindow = null;
-        public string index;
+        public static MessageBoxCustom obj = null;
 
-        public HotkeyDialog(string index)
+        public MessageBoxCustom(string message)
         {
+            if (obj != null)
+            {
+                obj.Close();
+            }
             InitializeComponent();
-            this.index = index;
+            obj = this;
+            Label_Custom_Message.Content = message;
+            Show();
+            Activate();
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.closeHotkeyDialog();
-            Close();            
+            Close();
         }
 
         private void Confirm_Button_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.closeHotkeyDialog();
             Close();
         }
 
-        private void HotkeyDialog_MouseDown(object sender, MouseButtonEventArgs e)
+        public static void Close_current()
+        {
+            if(obj != null)
+            {
+                obj.Close();
+            }            
+        }
+
+        private void MessageBoxCustom_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed) { DragMove(); }
         }
