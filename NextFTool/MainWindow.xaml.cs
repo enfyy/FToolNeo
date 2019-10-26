@@ -181,6 +181,7 @@ namespace NextFTool
         // Action of the Hotkey Button -> opens the hotkeydialog
         private void Set_Hotkey_Click(object sender, RoutedEventArgs e)
         {  
+            /*
             Button button = sender as Button;
             string index = GetIndexFromName(button.Name);
             if (hotkeyDialog == null) //No window open
@@ -199,6 +200,7 @@ namespace NextFTool
             {
                 hotkeyDialog.Activate();
             }
+            */
         }
 
         // Action of the Start/Stop Button -> starts or stops the spammer

@@ -50,7 +50,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_0" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -66,7 +66,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_0" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -79,11 +79,11 @@
                             <ComboBoxItem Content="8" />
                             <ComboBoxItem Content="9" />
                         </ComboBox>
-                    </StackPanel>                    
+                    </StackPanel>
 
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="155" HorizontalAlignment="Center" VerticalAlignment="Center" >
-                    <Label Name="Label_Attached_To_0" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>                    
+                    <Label Name="Label_Attached_To_0" Opacity="0.1" Foreground="#FF00FFDC" Content="Attached to: " FontFamily="{StaticResource Nunito-Regular}"/>
                     <Button x:Name="ProcessSelector_Button_0" Click="ProcessSelector_Button_Click"  Height="30" Background="{x:Null}" BorderThickness="1" HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal" Width="150">
                             <Label Content="Select Process" Foreground="White" Width="123"/>
@@ -103,10 +103,13 @@
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <StackPanel Width="35">
+                <StackPanel Width="35" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Button x:Name="Set_Hotkey_0" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_0" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_0" Height="20" FontSize="9" Content="F1" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
@@ -116,7 +119,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_1" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -132,7 +135,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_1" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -173,6 +176,9 @@
                     <Button x:Name="Set_Hotkey_1" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_1" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_1" Height="20" FontSize="9" Content="F2" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
@@ -182,7 +188,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_2" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -198,7 +204,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_2" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -239,6 +245,9 @@
                     <Button x:Name="Set_Hotkey_2" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_2" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_2" Height="20" FontSize="9" Content="F3" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
@@ -248,7 +257,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_3" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -264,7 +273,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_3" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -305,6 +314,9 @@
                     <Button x:Name="Set_Hotkey_3" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_3" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_3" Height="20" FontSize="9" Content="F4" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
@@ -314,7 +326,7 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_4" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -330,7 +342,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_4" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -371,16 +383,19 @@
                     <Button x:Name="Set_Hotkey_4" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_4" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_4" Height="20" FontSize="9" Content="F5" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
         </StackPanel>
-        <StackPanel Grid.Row="6" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="5" Margin="0,119,0,10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="111" Grid.RowSpan="2">
             <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.35" Height="15"/>
             <StackPanel Grid.Row="1" Orientation="Horizontal">
                 <StackPanel Orientation="Vertical" Width="135">
                     <StackPanel Orientation="Horizontal">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Key" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="F_Key_Select_5" Foreground="Black" Height="25" Width="40" >
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="F1" />
@@ -396,7 +411,7 @@
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Margin="0,30,0,0">
-                        <Label Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
+                        <Label HorizontalContentAlignment="Center" Grid.Row="0" Foreground="White" Content="F-Bar" Height="25" VerticalAlignment="Top" FontFamily="{StaticResource Nunito-Regular}" Width="60"/>
                         <ComboBox x:Name="Skill_Bar_Select_5" Height="25" Width="40">
                             <ComboBoxItem Content="-" IsSelected="True"/>
                             <ComboBoxItem Content="1" />
@@ -437,9 +452,11 @@
                     <Button x:Name="Set_Hotkey_5" Click="Set_Hotkey_Click" Background="{x:Null}" BorderThickness="0">
                         <fa:ImageAwesome Icon="KeyboardOutline" Foreground="White" Width="22"  Height="20"/>
                     </Button>
+                    <Label x:Name="Label_Modifier_5" Height="20" FontSize="9" Content="Shift" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label Content="+" Height="20" FontSize="9" Foreground="White" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="Label_Key_5" Height="20" FontSize="9" Content="F6" Foreground="White" HorizontalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
-            <Separator Foreground="White" BorderBrush="White"  Width="380" HorizontalAlignment="Center" VerticalAlignment="Center" Opacity="0.35" Height="15"/>
         </StackPanel>
     </Grid>
 </Window>
