@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -57,7 +58,8 @@ namespace NextFTool
 
         private Process[] GetProcesses()
         {
-            Process[] neuzProcesses = Process.GetProcessesByName("Neuz"); //TODO: maybe get from .ini file
+            String process_name = File.ReadAllText("process_name.txt");
+            Process[] neuzProcesses = Process.GetProcessesByName(process_name); //TODO: maybe get from .ini file
             return neuzProcesses;
         }
 

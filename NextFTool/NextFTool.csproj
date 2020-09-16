@@ -166,5 +166,8 @@
   <ItemGroup>
     <Resource Include="Google-Noto-Emoji-People-Clothing-Objects-12123-eyes.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="process_name.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
