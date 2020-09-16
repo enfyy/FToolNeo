@@ -7,14 +7,11 @@ Things that this tool does differently from the current one:
 - Hotkeys for enabling and disabling a spammer (Shift + F1 for the first spammer... etc.)
 - delay is set in milliseconds instead of full seconds.
 
-Things that will probably be coming soon:
+Things that will maybe be coming one day (or not):
 - setting custom hotkeys
-- persistance for the configuration
 
 UI: https://i.gyazo.com/4cb7a9a0d3ba87a0a797dc8ded040c78.png
 
 Virustotal: https://www.virustotal.com/gui/file/b0d7f67c7957e15349357c024f1372ad61684a17ac437393b18bc71ff3229377/detection
 
 Source-Code: https://github.com/enfyy/FToolNeo
-
-Download: https://cdn.discordapp.com/attachments/276369323096801290/637676680328118307/F-Tool_Neo_v0.1_by_enfy.rar
