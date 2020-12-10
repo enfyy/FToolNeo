@@ -15,5 +15,5 @@ Things that will maybe be coming one day (or not):
 How to use:
 1. Find out the process name of the flyff client (usually Neuz) and put that into the process_name.txt
 2. Run as admin
-3. Set your keys however you need them
+3. Set your keys however you need them and select your instance of the client.
 4. Use Shift + F-Key to enable/disable the spammer.
