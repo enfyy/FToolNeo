@@ -1,6 +1,4 @@
-I made a new F-Tool because i got sick of the current one. Its not completely done yet but the core features are working pretty well already.
-So now im looking for testers that can give me feedback on what could be improved or what bugs there are.
-
+I made a new F-Tool because i got sick of the other one. 
 ![ui](https://i.gyazo.com/4cb7a9a0d3ba87a0a797dc8ded040c78.png)
 
 Things that this tool does differently from the current one:
@@ -12,8 +10,8 @@ Things that this tool does differently from the current one:
 Things that will maybe be coming one day (or not):
 - setting custom hotkeys
 
-
-
-Virustotal: https://www.virustotal.com/gui/file/b0d7f67c7957e15349357c024f1372ad61684a17ac437393b18bc71ff3229377/detection
-
-Source-Code: https://github.com/enfyy/FToolNeo
+How to use:
+1. Find out the process name of the flyff client (usually Neuz) and put that into the process_name.txt
+2. Run as admin
+3. Set your keys however you need them
+4. Use Shift + F-Key to enable/disable the spammer.
